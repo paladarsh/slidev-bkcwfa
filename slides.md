@@ -1,5 +1,6 @@
-# Bayesian Estimation 
-## of total fertility from a population’s age-sex structure
+# MTH535 Course Project
+## Bayesian Estimation 
+### of total fertility from a population’s age-sex structure
 
 <br/>
 
