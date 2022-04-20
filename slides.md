@@ -145,7 +145,7 @@ Finally, $F_{a's}$ are calculated as $\ \rightarrow\ (F_{10}, F_{15}, ..., F_{45
 <br/>
 
 **Priors** : 
-- $\beta \sim \mathcal{N}(0, I_{2})$
+- $\beta \sim \mathcal{N}(0, I_{2})$ with support restricted to the range $[−2,+2]$ for each coefficient, in order to better mimic the HFD distributions
 - non informative prior $T$ $\sim$ Uniform(0, 20) for $TFR$
 
 
