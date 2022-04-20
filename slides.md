@@ -100,7 +100,7 @@ age group.
 ---
 
 <!-- ![The Bayesian Model](bayes.jpg) -->
-<center><img src="bayes.jpg" alt="bayes" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/paladarsh/slidev-bkcwfa/master/bayes.jpg" alt="bayes" width="350"/></center>
 
 
 We model $C$ as a random variable as there is always uncertainty involved in the number of children, as the demographic quantities are not truly constant since fertility age patterns and mortality schedule cannot be known with certainty. We assume that the expected value of
@@ -226,6 +226,12 @@ The Kanamari Indigenous Territory in the Brazilian state of Amazonas, had $C = 1
 We infer the following -
 - There is high standard deviation in the posterior TFR, which can be explained due to the very small population and high uncertainty about important demographic parameters like child mortality.
 - Using the Bayesian approach to estimate TFR, we can conclude that the Kanamari TFR is higher than 6.8 (97.5 \% posterior probability) and certainly lower than 10.5 (97.5 \%)
+
+---
+
+Trace Plot for TFR             |  ACF Plot for TFR
+:-------------------------:|:-------------------------:
+![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/rplot.jpg?raw=true)  |  ![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/acf.jpg?raw=true)
 
 ---
 
