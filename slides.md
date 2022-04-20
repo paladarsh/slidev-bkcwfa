@@ -5,9 +5,9 @@
 
 |  |  |  |  |
 |----|---|--|--|
-|Shobhit Patel|180732|Adarsh Pal|180032|
-|Amol Mishra|180082|Naman Gupta|180458|
-|Rishabh Kothary|180608|
+|Shobhit Patel (shob@iitk.ac.in)|180732|Adarsh Pal (palad@iitk.ac.in)|180032|
+|Amol Mishra (amolm@iitk.ac.in)|180082|Naman Gupta (namang@iitk.ac.in)|180458|
+|Rishabh Kothary (rishk@iitk.ac.in)|180608|
 ---
 
 # Objective
@@ -16,7 +16,7 @@
 <br/>
 <br/>
 
-#### The primary objective of the paper is to model the distribution of the TFR(Total Fertility Rate) conditional on the number of women in the child bearing age. The approach used is bayesian, in which unknown demographic quantities are parameters with prior distributions. 
+#### The primary objective of the paper is to model the distribution of the TFR (Total Fertility Rate) conditional on the number of women in the childbearing age. The approach used is bayesian, in which unknown demographic quantities are parameters with prior distributions. 
 
 <br/>
 <br/>
@@ -64,7 +64,8 @@ $F_a = \frac{1}{5}\displaystyle\sum_{x\in a} f_x$
 - **$TFR$** : Also known as the total fertility rate is interpreted as the number of children a woman
 will have over her entire lifetime. Mathematically, 
 
-$\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TFR = \displaystyle\sum_{a}5F_a$
+$TFR = \displaystyle\sum_{a}5F_a$
+
 - **$\phi_a$** : Is defined as the fraction of total fertility occurring in age group $a$. Mathematically,
 $\phi_a = \frac{5F_a}{TFR}$
 - **$W_a$** : The number of woman in the age group $a$ observed.
@@ -93,12 +94,14 @@ total number of woman in the childbearing age. Mathematically,
 $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CWR = \frac{C}{W} = TFR \cdot s \cdot \left (  \displaystyle\sum_a  \frac{W_a}{W}p_a \right) = TFR \cdot s \cdot \bar{p}$
 - **$1/\bar{p}$** : Is defined as the age structure multiplier that depends on fertility rate,mortality rate and
 the number of women observed. It is weighted average of the total fertility observed in each
-age group. Classical deterministic approaches took it to be $7$ by assuming fertility is uniformly
-distributed among all age groups. In the Bayesian approach we model it more carefully.
+age group.
+- **iTFR** : Is known as the implied Total Fertility Rate and it estimates total fertility from age- and sex-specific population only.
 
 ---
 
-![The Bayesian Model](bayes.png)
+<!-- ![The Bayesian Model](bayes.jpg) -->
+<center><img src="bayes.jpg" alt="bayes" width="350"/></center>
+
 
 We model $C$ as a random variable as there is always uncertainty involved in the number of children, as the demographic quantities are not truly constant since fertility age patterns and mortality schedule cannot be known with certainty. We assume that the expected value of
  $C = \sum_a W_aK_a$. The figure shows a hierarchical model for the Bayesian approach for finding $TFR$ conditioned on $C$ and $W$. We specify priors on $q_{5}$, $\beta$ and $k$, and then examine $P(TFR | C, W)$ the posterior distribution of TFR conditional on the data and the priors. The following are the different parameters of the model.
@@ -119,15 +122,15 @@ $\phi_{a's}$ modelled as $\ \rightarrow\  \ \phi_a = \frac{exp(\gamma_{a})}{\dis
 
 <br/>
 
-$m$ and $X$ are constant estimated using HFD and US Census
-Bureau’s International Database and are as follows
-$\ \\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ X^\top = \begin{matrix}
+$m$ and $X$ are constants estimated using HFD and US Census Bureau’s International Database and are as follows
+$\ \\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ X^\top = 
+\begin{pmatrix}
 0 & 0.27 & 0.54 & 0.73 & 0.88 & 1.04 & 1.52\\
 0 & 0.32 & 0.51 & 0.51 & 0.35 & 0.05 & −0.72
-\end{matrix}\\$
-$\\\ \\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m^\top = \begin{matrix}
+\end{pmatrix}\\$
+$\\\ \\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m^\top = \begin{pmatrix}
 0 & 1.39 & 1.59 & 1.23 & 0.45 & −0.89 & −3.44
-\end{matrix}$
+\end{pmatrix}$
 
 ---
 
@@ -182,5 +185,37 @@ $\ \\\ \\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P\left[q_{5} < \fra
 ---
 
 # Expected number of surviving children
+We find the expected number of surviving 0-4 year-old children of both sexes per woman in age group a = 15, 20, ..., 50 at the end of 5 year period, as - 
 
+$\ \\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ K_{a} =\left[\frac{L_{a-5}}{L_{a}} \cdot F_{a-5}+F_{a}\right] \frac{L_{0}}{2}$
+
+The expected number of surviving children for the $W_{a}$ women observed in age
+group a is $W_{a}K_{a}$, and the observed number of their surviving children is modelled as $C_{a} \sim Poisson(W_{a}K_{a})$. It is assumed that $C_{a}$ values are
+statistically independent, conditional on fertility and mortality rates, so that their sum is also a Poisson variable. $C=\sum_{a} C_{a}$ is also a Poisson random variable. Thus,
+$$
+C \mid \text { TFR }, \boldsymbol{\beta}, q_{5}, k \sim \operatorname{Poisson}\left[\sum_{a} W_{a} K_{a}\left(\text { TFR }, \boldsymbol{\beta}, q_{5}, k\right)\right]
+$$
+---
+
+# Posterior Distribution of TFR
+
+The posterior distribution conditioned on data is
+$\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P(\text{TFR}, \boldsymbol{\beta}, q_{5}, k \mid \text { C})  \propto L(C \mid \text {TFR}, \boldsymbol{\beta}, q_{5}, k) f_\beta(\boldsymbol{\beta}) f_q(q_{5}) f_k(k)$
+
+where the likelihood is the Poisson distribution in subsection 3.3 and the other functions are the priors mentioned in above sections. The marginal posterior for TFR given the number of children C and counts of woman for each age group is given by
+$$ P(\text{TFR} \mid \text { C}) \propto \int L(C \mid \text {TFR}, \boldsymbol{\beta}, q_{5}, k) f_\beta(\boldsymbol{\beta}) f_q(q_{5}) f_k(k)d\boldsymbol{\beta}dq_{5}dk $$
+
+The paper samples from the full posterior distribution by applying Markov Chain Monte Carlo (MCMC) methods. Specifically, we programmed the model JAGS package in R.
+---
+
+# Case Studies
+
+#### A small indigenous population in the Brazilian Amazon
+The Kanamari Indigenous Territory in the Brazilian state of Amazonas, had $C = 191$ resident children in ages 0-4 and $W = (40, 34, 29, 19, 14, 9, 8)$ resident women in the age groups 15-19 through 45-49 in the 2010 data.
+- $q_5 \sim  Beta(3.99, 114.26)$
+- $a_f, b_f, c_f, v_f$ values taken from the dataset
+- MCMC Sampling: 20000
+- Burn-in Period: 1000
+- Thinning: 10
+- Number of chains: 2
 
