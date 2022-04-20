@@ -218,4 +218,12 @@ The Kanamari Indigenous Territory in the Brazilian state of Amazonas, had $C = 1
 - Burn-in Period: 1000
 - Thinning: 10
 - Number of chains: 2
+---
 
+# adsfsdfs A
+
+---
+Trace Plot for TFR             |  ACF Plot for TFR
+:-------------------------:|:-------------------------:
+![](rplot.jpg)  |  ![](acf.jpg)
+---
