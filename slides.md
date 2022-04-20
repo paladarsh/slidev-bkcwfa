@@ -203,7 +203,7 @@ $$
 The posterior distribution conditioned on data is
 $\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P(\text{TFR}, \boldsymbol{\beta}, q_{5}, k \mid \text { C})  \propto L(C \mid \text {TFR}, \boldsymbol{\beta}, q_{5}, k) f_\beta(\boldsymbol{\beta}) f_q(q_{5}) f_k(k)$
 
-where the likelihood is the Poisson distribution in subsection 3.3 and the other functions are the priors mentioned in above sections. The marginal posterior for TFR given the number of children C and counts of woman for each age group is given by
+where the likelihood is the Poisson distribution and the other functions are the priors mentioned in above sections. The marginal posterior for TFR given the number of children C and counts of woman for each age group is given by
 $$ P(\text{TFR} \mid \text { C}) \propto \int L(C \mid \text {TFR}, \boldsymbol{\beta}, q_{5}, k) f_\beta(\boldsymbol{\beta}) f_q(q_{5}) f_k(k)d\boldsymbol{\beta}dq_{5}dk $$
 
 The paper samples from the full posterior distribution by applying Markov Chain Monte Carlo (MCMC) methods. Specifically, we programmed the model JAGS package in R.
