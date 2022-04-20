@@ -100,8 +100,9 @@ age group.
 
 ---
 
+<center><h3>Bayesian Hierarchical Diagram for the model:</h3>/</center>
 <!-- ![The Bayesian Model](bayes.jpg) -->
-<center><img src="https://raw.githubusercontent.com/paladarsh/slidev-bkcwfa/master/bayes.jpg" alt="bayes" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/paladarsh/slidev-bkcwfa/master/bayes.jpg" alt="bayes" height="200" width="300"/></center>
 
 
 We model $C$ as a random variable as there is always uncertainty involved in the number of children, as the demographic quantities are not truly constant since fertility age patterns and mortality schedule cannot be known with certainty. We assume that the expected value of
@@ -250,13 +251,25 @@ with $\mu$ and $\sigma$ being the same for all so that the smaller counties can 
 - Burn-in Period: 100
 - Thinning: 4
 - Number of chains: 2
-
+- Priors on $\mu$ and $\sigma^2$: 
+  $\ \\ \ \ \ \ \ \ \ \ \mu \sim U(0,4), \sigma^2 \sim U(0,2)$
 ---
 
-<center><img src="https://github.com/paladarsh/slidev-bkcwfa/blob/master/county.jpg?raw=true" alt="bayes" width="400" height="600"/></center>
+<p align= "center">
+<img src="https://github.com/paladarsh/slidev-bkcwfa/blob/master/county.jpg?raw=true" alt="bayes" width="400" height="600"/>
+</p>
+<p align = "center">
+Posterior Distributions for TFR in 159 Georgia counties, 2010. Counties are sorted in ascending order of posterior median (represented by dots). Horizontal bars represent 95% credible intervals. The crosses represent iTFR for the various counties.
+</p>
 ---
 
 # Inference
-
+- The paper also uses distinct mortality priors for each county, which is calculated using the
+Georgia public health data.
 - Almost all iTFR (implied TFR) estimates are below the Bayesian posterior median. This underestimate is due to the variance in the population of women in each age group. Thus, we can say that age-group population of women has a larger role than iTFR.
 - Even with larger population and lower mortality rates, the uncertainty in sampling and age-patterns of childbearing imply uncertainty in TFR based on CWRs. The uncertainty is evident from the 95\% credible interval of 0.06 for Fulton [1.64, 1.71] to 0.91 for Taliaferro [1.84, 2.75]
+---
+
+# Conclusions:
+- In both case studies we see uncertainty in the TFR even when we used priors particular to the place as done for the counties this implies that mainly the variation in the age-sex distribution drives the bayesian TFR.
+- Our strong conclusion from this exercise is that the posterior for TFR is not sensitive to the choice of priors. Bayesian TFR estimates are driven mainly by variation in the age–sex distribution, and are similar under many plausible distributions of fertility and mortality age patterns.
