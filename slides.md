@@ -258,5 +258,5 @@ with $\mu$ and $\sigma$ being the same for all so that the smaller counties can 
 
 # Inference
 
-- Almost all iTFR (implied TFR) estimates are below the Bayesian posterior median. This underestimate is due to the variance in the population of women in each age group. %Thus, we can say that age-group population of women has a larger role than iTFR.
+- Almost all iTFR (implied TFR) estimates are below the Bayesian posterior median. This underestimate is due to the variance in the population of women in each age group. Thus, we can say that age-group population of women has a larger role than iTFR.
 - Even with larger population and lower mortality rates, the uncertainty in sampling and age-patterns of childbearing imply uncertainty in TFR based on CWRs. The uncertainty is evident from the 95\% credible interval of 0.06 for Fulton [1.64, 1.71] to 0.91 for Taliaferro [1.84, 2.75]
