@@ -226,7 +226,7 @@ The Kanamari Indigenous Territory in the Brazilian state of Amazonas, had $C = 1
 We infer the following -
 - There is high standard deviation in the posterior TFR, which can be explained due to the very small population and high uncertainty about important demographic parameters like child mortality.
 - Using the Bayesian approach to estimate TFR, we can conclude that the Kanamari TFR is higher than 6.8 (97.5 \% posterior probability) and certainly lower than 10.5 (97.5 \%)
-
+![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/Kanamari.png?raw=true)
 ---
 
 Trace Plot for TFR             |  ACF Plot for TFR
@@ -248,3 +248,5 @@ with $\mu$ and $\sigma$ being the same for all so that the smaller counties can 
 - Number of chains: 2
 
 ---
+
+<center><img src="https://github.com/paladarsh/slidev-bkcwfa/blob/master/county.jpg?raw=true" alt="bayes" width="400" height="600"/></center>
