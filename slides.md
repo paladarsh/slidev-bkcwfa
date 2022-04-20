@@ -211,7 +211,7 @@ The paper samples from the full posterior distribution by applying Markov Chain 
 
 # Case Studies
 
-#### A small indigenous population in the Brazilian Amazon
+#### 1) A small indigenous population in the Brazilian Amazon
 The Kanamari Indigenous Territory in the Brazilian state of Amazonas, had $C = 191$ resident children in ages 0-4 and $W = (40, 34, 29, 19, 14, 9, 8)$ resident women in the age groups 15-19 through 45-49 in the 2010 data.
 - $q_5 \sim  Beta(3.99, 114.26)$
 - $a_f, b_f, c_f, v_f$ values taken from the dataset
@@ -222,7 +222,23 @@ The Kanamari Indigenous Territory in the Brazilian state of Amazonas, had $C = 1
 
 ---
 
-![](bayes.jpg)  |  ![](bayes.jpg)
+# Inference
+We infer the following -
+- There is high standard deviation in the posterior TFR, which can be explained due to the very small population and high uncertainty about important demographic parameters like child mortality.
+- Using the Bayesian approach to estimate TFR, we can conclude that the Kanamari TFR is higher than 6.8 (97.5 \% posterior probability) and certainly lower than 10.5 (97.5 \%)
 
+---
+
+#### 2) 159 counties in Georgia
+
+We estimate the TFR for 159 counties in the US state of Georgia from 2010 census population. The counties are varying in population with Taliaferro County having only 335 resident women of the reproductive age and Fulton county having more than 250,000 women in the reproductive age range. The model structure is the same as followed in the hierarchical diagram with two changes. The paper adds independent priors to the TFR of each county from a common distribution. 
+
+$\ \\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TFR_{i} \sim \mathcal{N}(\mu, \sigma^2)$ 
+
+with $\mu$ and $\sigma$ being the same for all so that the smaller counties can take support from the other counties. 
+- MCMC Sampling: 600
+- Burn-in Period: 100
+- Thinning: 4
+- Number of chains: 2
 
 ---
