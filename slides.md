@@ -224,6 +224,12 @@ The Kanamari Indigenous Territory in the Brazilian state of Amazonas, had $C = 1
 
 ---
 
+Trace Plot for TFR             |  ACF Plot for TFR
+:-------------------------:|:-------------------------:
+![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/rplot.jpg?raw=true)  |  ![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/acf.jpg?raw=true)
+
+---
+
 # Inference
 
 The Kanamari data had $C=191$ and $W=153$, so the iTFR=$7.\frac{C}{W}=7.\frac{191}{253}=8.74$, which is close to our median of $8.473$
@@ -234,12 +240,6 @@ We infer the following -
 ![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/Kanamari.png?raw=true)
 ---
 
-Trace Plot for TFR             |  ACF Plot for TFR
-:-------------------------:|:-------------------------:
-![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/rplot.jpg?raw=true)  |  ![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/acf.jpg?raw=true)
-
----
-
 #### 2) 159 counties in Georgia
 
 We estimate the TFR for 159 counties in the US state of Georgia from 2010 census population. The counties are varying in population with Taliaferro County having only 335 resident women of the reproductive age and Fulton county having more than 250,000 women in the reproductive age range. The model structure is the same as followed in the hierarchical diagram with two changes. The paper adds independent priors to the TFR of each county from a common distribution. 
@@ -247,7 +247,7 @@ We estimate the TFR for 159 counties in the US state of Georgia from 2010 census
 $\ \\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TFR_{i} \sim \mathcal{N}(\mu, \sigma^2)$ 
 
 with $\mu$ and $\sigma$ being the same for all so that the smaller counties can take support from the other counties.
- 
+
 The paper also uses distinct mortality priors for each county, which is calculated using the
 Georgia public health data.
 - MCMC Sampling: 600
