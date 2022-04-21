@@ -1,6 +1,8 @@
 # MTH535 Course Project
 ## Bayesian Estimation 
 ### of total fertility from a population’s age-sex structure
+<h4 align='right'>(Carl P Schmertmann and Mathew E Hauer)</h4>
+
 
 <br/>
 
