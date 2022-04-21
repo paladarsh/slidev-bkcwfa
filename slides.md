@@ -274,4 +274,4 @@ Posterior Distributions for TFR in 159 Georgia counties, 2010. Counties are sort
 ---
 
 # Conclusions:
-- In both case studies we see uncertainty in the TFR even when we used priors particular to the place as done for the counties this implies that mainly the variation in the age-sex distribution drives the bayesian TFR.
+- In both case studies we see uncertainty in the TFR even when we used priors particular to the place as done for the counties. This implies that it is mainly the variation in the age-sex distribution that drives the bayesian TFR.
