@@ -228,7 +228,7 @@ The Kanamari Indigenous Territory in the Brazilian state of Amazonas, had $C = 1
 
 Trace Plot for TFR             |  ACF Plot for TFR
 :-------------------------:|:-------------------------:
-![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/rplot.jpg?raw=true)  |  ![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/acf.jpg?raw=true)
+![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/rplot.jpg.png?raw=true)  |  ![](https://github.com/paladarsh/slidev-bkcwfa/blob/master/acf.jpg?raw=true)
 
 ---
 
